@@ -108,10 +108,22 @@ public class Votacion extends AppCompatActivity {
                     //PORCENTAJE DE VOTOS
                     porcentaje_votos = cant_votos/GloabalVariable.votos_totales;
 
-                    GloabalVariable.Votos[voto][2] = String.valueOf(formatoPorcentaje.format(porcentaje_votos));
+                    GloabalVariable.Votos[0][2] = String.valueOf(formatoPorcentaje.format(
+                            Double.parseDouble( GloabalVariable.Votos[0][1])/GloabalVariable.votos_totales
+                    ));
+                    GloabalVariable.Votos[1][2] = String.valueOf(formatoPorcentaje.format(
+                            Double.parseDouble( GloabalVariable.Votos[1][1])/GloabalVariable.votos_totales
+                    ));
+                    GloabalVariable.Votos[2][2] = String.valueOf(formatoPorcentaje.format(
+                            Double.parseDouble( GloabalVariable.Votos[2][1])/GloabalVariable.votos_totales
+                    ));
 
                     Intent result = new Intent(getApplicationContext(), Resultados.class);
                     startActivity(result);
+
+                    Log.e("candidato1",GloabalVariable.Votos[0][2]);
+                    Log.e("candidato2",GloabalVariable.Votos[1][2]);
+                    Log.e("candidato3",GloabalVariable.Votos[2][2]);
 
 
 

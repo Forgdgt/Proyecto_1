@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private Toast Toat;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,6 +115,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 switch (aux){
                     case 1:
+                        String nombre;
+                        nombre= GloabalVariable.datos[(GloabalVariable.votante)][1] +" "+ GloabalVariable.datos[(GloabalVariable.votante)][2];
+                        Toast.makeText(getApplicationContext(),"Bienvenido "+nombre,Toast.LENGTH_LONG).show();
+
                         Intent intent = new Intent(getApplicationContext(), Votacion.class);
                         Log.e("Index votante", String.valueOf(GloabalVariable.votante));
                         Log.e("Verificacion", GloabalVariable.datos[(GloabalVariable.votante)][0]);

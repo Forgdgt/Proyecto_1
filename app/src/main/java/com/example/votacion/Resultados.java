@@ -67,4 +67,18 @@ public class Resultados extends AppCompatActivity {
 
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        tv_can_1.setText(" Votos : "+GloabalVariable.Votos[0][1]);
+        tv_can_2.setText(" Votos : "+GloabalVariable.Votos[1][1]);
+        tv_can_3.setText(" Votos : "+GloabalVariable.Votos[2][1]);
+
+        tv_por_1.setText(" "+GloabalVariable.Votos[0][2]);
+        tv_por_2.setText(" "+GloabalVariable.Votos[1][2]);
+        tv_por_3.setText(" "+GloabalVariable.Votos[2][2]);
+
+
+    }
 }
